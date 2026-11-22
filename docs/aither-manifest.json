@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1",
+  "name": "awedgerunner",
+  "description": "Run agent and CI work on edge runners nobody has to rack -- a volunteer's idle GPU, a phone on your own mesh, an edge worker, a free or spot CI runner -- under a lease with a hard budget cap, a named payer and an expiry.",
+  "url": "https://aitherium.github.io/awedgerunner/",
+  "repository": "https://github.com/Aitherium/awedgerunner",
+  "kind": "runtime",
+  "status": "public",
+  "adopt": "Open a lease with a one-dollar cap and a thirty-minute expiry, run one job under it, and watch the charge that would cross the cap be refused.",
+  "pairs_with": [
+    "awrun",
+    "awpool",
+    "awnet",
+    "awrise",
+    "awwall",
+    "awtunnel",
+    "awnix",
+    "awiam",
+    "awbac",
+    "awdit",
+    "awseal"
+  ],
+  "includes": [],
+  "metrics": {
+    "files": {
+      "value": 23,
+      "as_of": "2026-11-22T13:29:00-08:00"
+    },
+    "tests": {
+      "value": 3,
+      "as_of": "2026-11-22T13:29:00-08:00"
+    }
+  }
+}
