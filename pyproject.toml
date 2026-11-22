@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awedgerunner"
+version = "0.1.0"
+description = "Run agent and CI work on edge runners nobody has to rack, under a lease with a hard budget cap, a named payer and an expiry. Stdlib only; every runner target delegates."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Aitherium", email = "eng@aitherium.com" }]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+# No hard dependencies: awrun (queue, GPU door client) is a LAZY import, and an
+# absent awrun is reported by `awedgerunner targets`, never a silent feature-off.
+dependencies = []
+
+[project.optional-dependencies]
+awrun = ["awrun>=0.2.8"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+awedgerunner = "awedgerunner.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Aitherium/awedgerunner"
+Documentation = "https://aitherium.github.io/awedgerunner/"
+Source = "https://github.com/Aitherium/awedgerunner.git"
+Issues = "https://github.com/Aitherium/awedgerunner/issues"
+
+[tool.setuptools]
+packages = ["awedgerunner"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint.isort]
+# The monorepo gate (check_python_quality, run from the repo root) sees this
+# package as third-party; agree with it so both runs sort imports the same way.
+known-third-party = ["awedgerunner"]
