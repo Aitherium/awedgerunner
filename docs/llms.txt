@@ -1,0 +1,39 @@
+# awedgerunner
+
+> Run agent and CI work on edge runners nobody has to rack -- a volunteer's idle GPU, a phone on your own mesh, an edge worker, a free or spot CI runner -- under a lease with a hard budget cap, a named payer and an expiry.
+
+Spare compute is everywhere (idle gaming GPUs, free CI minutes, spot boxes, edge workers), but handing a contributor a slice of shared budget means trusting them not to overspend, remembering to switch it off, and finding out later whose bill it silently landed on.
+
+## Install
+
+```
+pip install awedgerunner
+```
+
+## Use it in 30 seconds
+
+Open a lease with a one-dollar cap and a thirty-minute expiry, run one job under it, and watch the charge that would cross the cap be refused.
+
+## Composes with
+
+- [awrun](https://aitherium.github.io/awrun/) — A priority-aware queue and dispatcher for agentic runs and ad-hoc CI builds. It also judges whether the runner pool is big enough for the queue it is draining, and can ask a host to grow it -- reserving capacity is zero-sum, so a saturated pool needs more of it, not a different share of it.
+- [awpool](https://aitherium.github.io/awpool/) — The free half of the elastic work pool: dispatches public-safe work onto the free GitHub-hosted runners of the public aw* mirrors, so their idle CI minutes become compute. awrun remains the paid/self-hosted lane; this is its free twin.
+- [awnet](https://aitherium.github.io/awnet/) — The agentic web — agents host a mesh, and agents join one.
+- [awrise](https://aitherium.github.io/awrise/) — Wake an agent on a schedule, let it do one thing, and put it back to sleep.
+- [awwall](https://aitherium.github.io/awwall/) — Say what a workload may reach, and watch everything else fail closed.
+- [awtunnel](https://aitherium.github.io/awtunnel/) — Reach a service that has no public address.
+- [awnix](https://aitherium.github.io/awnix/) — A Linux you can hand to an agent — immutable base, capabilities included.
+- [awiam](https://aitherium.github.io/awiam/) — Who is this caller? A directory and session store that fails honestly.
+- [awbac](https://aitherium.github.io/awbac/) — Role-based access control that fails closed and explains itself.
+- [awdit](https://aitherium.github.io/awdit/) — An append-only audit trail whose gaps are DETECTABLE.
+- [awseal](https://aitherium.github.io/awseal/) — Sign an artifact so a stranger can verify it.
+
+## Where it lives
+
+- Repo: https://github.com/Aitherium/awedgerunner
+- Docs: https://aitherium.github.io/awedgerunner/
+- Manifest (keys + the one-line adoption story): https://aitherium.github.io/awedgerunner/aither-manifest.json
+
+This repository is mirrored from the AitherOS monorepo by `.github/workflows/sync-awedgerunner.yml`; hand edits made here are overwritten on the next sync — change the source instead.
+
+Everything Aitherium, in one file for agents: https://aitherium.com/llms.txt
